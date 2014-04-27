@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <title>P2Pool - Howto</title>
+        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+        <script type="text/javascript" src="d3.v2.min.js"></script>
+	    <link href="css/bootstrap.css" rel="stylesheet">
+		<link href="css/jquery.jqplot.min.css" rel="stylesheet">
+		<script src="http://twitter.github.com/bootstrap/assets/js/jquery.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script language="javascript" type="text/javascript" src="js/jquery.jqplot.min.js"></script>
+		<script class="include" language="javascript" type="text/javascript" src="js/jqplot.pieRenderer.min.js"></script>
+	    <style>
+			body {
+				padding-top: 60px;
+			}
+			line {
+                stroke: black;
+                stroke-width: 1;
+                shape-rendering: crispEdges;
+            }
+
+            .plotline {
+                stroke-width: 1.4;
+                fill: none;
+            }
+
+            text {
+                font-family: Sans-serif;
+                font-size: 12px;
+            }
+	    </style>
+	    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+    </head>
+
+    <body>
+		<div class="navbar navbar-inverse navbar-fixed-top">
+		  <div class="navbar-inner">
+			<div class="container">
+			  <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			  </button>
+          <a class="brand" href="/"><img style="margin-bottom:-20px;margin-right:20px;margin-top:-20px;" src="img/qhornet-icon.png"> donSchoe's P2Pool (CACH)</a>
+			  <div class="nav-collapse collapse">
+				<ul class="nav">
+				  <li><a href="index.html">Stats</a></li>
+                  <li><a href="graphs.html">Graph</a></li>
+                  <li class="active"><a href="about.html">Howto</a></li>
+				</ul>
+			  </div><!--/.nav-collapse -->
+			</div>
+		  </div>
+		</div>
+
+        <div id="warnings"></div>
+        <div style="width:1080px;margin:auto;background-image:url(img/qhornet-back.png);background-repeat:no-repeat;background-position:top;">
+        <h1>Mining</h1>
+
+<p>To connect to this P2Pool node simply point your miner at:<br />
+<br />
+URL: http://q30.qhor.net:8336<br />
+Username: Cachecoin Address<br />
+Password: Anything<br />
+<br /></p>
+
+
+        <p>GPU Miner: <a href="https://github.com/Sykh/cacheminer" target="_blank">https://github.com/Sykh/cacheminer</a><br /> <pre>./yacminer --scrypt -o http://q30.qhor.net:8336 -u CP8qRQAESbU6CqJvsjh2tCSZWLQnhQd3n3 -p asdf</pre><br /></p>
+        <p>CPU Miner: <a href="https://github.com/kalgecin/cpuminer" target="_blank">https://github.com/kalgecin/cpuminer</a><br /> <pre>./minerd -a scrypt-jane -O CP8qRQAESbU6CqJvsjh2tCSZWLQnhQd3n3:asdf -o http://q30.qhor.net:8336</pre><br /></p>
+
+
+        <h1>Difficulty</h1>
+
+<p>If you wish to manually control your pseudo-share difficulty outside of the range provided by the dynamic system you can do the following:
+<pre>
+Cachecoin Address+0.00000116 x Hash Rate in KHash</pre>
+<br />
+For example for my R9 270x I use:
+<pre>
+700 x 0.00000116 = 0.000812
+CP8qRQAESbU6CqJvsjh2tCSZWLQnhQd3n3+0.000812
+</pre>
+<br />
+The following are suggested targets for various hash rates if you want to grab one quickly:
+<pre>
+KHash/s    Difficulty
+  50       +0.00005821
+ 100       +0.00011641
+ 250       +0.00029103
+ 500       +0.00058207
+ 750       +0.00087310
+1000       +0.00116414</pre><br /></p>
+
+        <h1>P2Pool nodes</h1>
+        <p>I recommend that you set at least two or more P2Pool nodes in your miner config as a backup, here are some:
+<ul><li><a href="http://q30.qhor.net:8336/static/" target="_blank">q30.qhor.net:8336</a> (EU/GER)</li>
+<li><a href="http://p2cache.syware.de:8336/static/" target="_blank">p2cache.syware.de:8336</a> (EU/GER)</li></ul><br /></p>
+        <h1>IRC</h1>
+        <p>Join <a href="http://irc2go.com/webchat/?net=freenode&room=cachecoin&nick=p2pool-friend" target="_blank">#cachecoin</a> on freenode to have a chat! :-)<br /></p>
+        </div>
+    <div style="border-bottom: 1px solid #ddd;"></div>
+    <center>
+        <tt>Interface by hardcpp <a href="https://github.com/hardcpp/P2PoolExtendedFrontEnd" target="_blank">https://github.com/hardcpp/P2PoolExtendedFrontEnd</a></tt><br/>
+    <tt>P2Pool-Cach by Sykh <a href="https://github.com/Sykh/p2pool-cache" target="_blank">https://github.com/Sykh/p2pool-cache</a></tt><br/>
+    <tt>Node by donSchoe <a href="http://q30.qhor.net:8336/static/" target="_blank">CP8qRQAESbU6CqJvsjh2tCSZWLQnhQd3n3</a> :-)</tt>
+    </center>
+    </body>
+</html>
